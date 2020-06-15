@@ -19,15 +19,6 @@ const copy = (target, source) => {
   return obj
 }
 
-const set = (path, value, source, target) => {
-  if (path.length) {
-    target[path[0]] =
-      path.length > 1 ? set(path.slice(1), value, source[path[0]], {}) : value
-    return copy(source, target)
-  }
-  return value
-}
-
 const get = (path, source) => {
   for (let i = 0; i < path.length; i++) {
     source = source[path[i]]
@@ -45,13 +36,17 @@ export default (app) => {
           ((key, action) => {
             actions[key] = async function () {
               const reducer = await action.apply(this, arguments)
-              return function (slice) {
-                const data = typeof reducer === 'function'
-                  ? reducer(slice, get(path, appActions))
-                  : reducer
-                if (data && !data.then) {
-                  state = set(path, copy(slice, data), state, {})
-                  store.dispatch(reducAction(key, state))
+              return async function (slice) {
+                let data
+                if (typeof reducer === 'function' && reducer.constructor.name === 'AsyncFunction') {
+                  data = await reducer(slice, get(path, appActions))
+                } else if (typeof reducer === 'function') {
+                  data = reducer(slice, get(path, appActions))
+                } else {
+                  data = reducer
+                }
+                if (data) {
+                  store.dispatch(reducAction(key, data))
                 }
                 return data
               }
