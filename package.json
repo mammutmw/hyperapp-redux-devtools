@@ -1,18 +1,14 @@
 {
-  "name": "hyperapp-redux-devtools",
-  "version": "1.1.6",
-  "description": "hyperapp HOA to utilize redux-devtools-extension for time travel debugging capabilities",
+  "name": "ramverk1-redux-devtools",
+  "version": "1.0.0",
+  "description": "ramverk1 HOA to utilize redux-devtools-extension for time travel debugging capabilities. Fork of hyperapp-redux-devtools",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "standard --fix"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/andyrj/hyperapp-redux-devtools.git"
-  },
   "keywords": [
-    "hyperapp",
+    "ramverk1",
     "redux",
     "devtools",
     "debug",
@@ -21,12 +17,7 @@
     "travel",
     "debugging"
   ],
-  "author": "Andy Johnson <andyrjohnson82@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/andyrj/hyperapp-redux-devtools/issues"
-  },
-  "homepage": "https://github.com/andyrj/hyperapp-redux-devtools#readme",
   "dependencies": {
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2"
@@ -35,6 +26,6 @@
     "standard": "^14.3.4"
   },
   "peerDependencies": {
-    "hyperapp": "^1.0.1"
+    "ramverk1": "^1.0.0"
   }
 }
