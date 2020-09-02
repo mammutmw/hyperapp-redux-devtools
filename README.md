@@ -1,4 +1,4 @@
-# hyperapp-redux-devtools
+# ramverk1-redux-devtools (fork of hyperapp-redux-devtools)
 hyperapp HOA (higher order app) to utilize redux-devtools-extension from hyperapp
 
 ```js

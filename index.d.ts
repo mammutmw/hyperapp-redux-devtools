@@ -1,1 +1,1 @@
-declare module 'hyperapp-redux-devtools';
+declare module 'ramverk1-redux-devtools';
