@@ -19,8 +19,8 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "redux": "^3.7.2",
-    "redux-devtools-extension": "^2.13.2"
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8"
   },
   "devDependencies": {
     "standard": "^14.3.4"
